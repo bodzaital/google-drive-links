@@ -5,12 +5,100 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Example Google Drives query</title>
+	<style>
+		/* *
+		{
+			outline: 1px solid blue;
+		} */
+
+		body
+		{
+			background-color: gray;
+			margin: 0;
+		}
+
+		section
+		{
+			max-width: 30rem;
+			margin: 2rem auto;
+			background-color: white;
+			padding: 2.5rem 1rem;
+			box-shadow: 0 0 1rem black;
+		}
+
+		label, input, button, .result p
+		{
+			display: block;
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+		}
+
+		label
+		{
+			text-align: center;
+			margin: 0 0 1rem 0;
+		}
+
+		input
+		{
+			width: 100%;
+			box-sizing: border-box;
+			padding: .25rem;
+			margin: 0 0 1rem 0;
+			font-family: monospace;
+			border: 1px solid gray;
+			border-radius: .25rem;
+			box-shadow: 0 0 1rem lightgray;
+		}
+
+		button
+		{
+			margin: 0 auto;
+			padding: .25rem 1rem;
+			background-color: lightgray;
+			border: 1px solid gray;
+			border-radius: .25rem;
+			transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out;
+		}
+
+		button:hover
+		{
+			box-shadow: 0 0 1rem lightgray;
+		}
+
+		button:active
+		{
+			background-color: darkgray;
+		}
+
+		pre
+		{
+			background-color: white;
+			overflow: auto;
+		}
+
+		.result
+		{
+			background-color: white;
+			padding: 1rem;
+		}
+	</style>
 </head>
 <body>
-	<form>
-		<label for="folderID">Public folderID:</label>
-		<input type="text" name="folderID">
-	</form>
+	<section>
+		<form>
+			<label for="key">Google Drive API key:</label>
+			<input type="text" name="key" id="key" data-lpignore="true">
+			<label for="folderID">Public folderID:</label>
+			<input type="text" name="folderID" id="folderID" data-lpignore="true">
+			<button>Query</button>
+		</form>
+	</section>
+	<div class="result">
+		<p>Result:</p>
+		<pre id="result">Waiting on input.</pre>
+	</div>
 	<script src="app.js" type="module"></script>
 </body>
 </html>
