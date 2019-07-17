@@ -9,11 +9,15 @@ Add a module script to your page:
 <script src="app.js" type="module"></script>
 ```
 
+------
+
 Import the Drive object from the module:
 
 ```javascript
 import { Drive } from "drive.js";
 ```
+
+------
 
 Set your Google Drive API key (read more at the API [Quickstart guide](https://developers.google.com/drive/api/v3/quickstart/js)):
 
@@ -23,6 +27,8 @@ Drive.Key = "< YOUR_API_KEY >";
 
 *You don't need to authenticate a user to run these queries. An oAuth key is not required nor used. Only an API key is required.*
 
+------
+
 Call the GetFiles(id, fields) function:
 
 ```javascript
@@ -30,6 +36,8 @@ Drive.GetFiles(folderID);
 ```
 
 The default value for the fields property is "files(id,webContentLink)"; only returns the internal id and public facing link to the file. More examples are in the [Google Drive API docs](https://developers.google.com/drive/api/v3/performance#partial-response).
+
+------
 
 Listen for the loadedFilesList event and process the files:
 
@@ -40,6 +48,8 @@ document.addEventListener("loadedFilesList", (e) => {
     });
 });
 ```
+
+------
 
 Example output:
 
